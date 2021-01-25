@@ -1,17 +1,13 @@
+import { FaBasketballBall } from 'react-icons/fa';
 import styled from 'styled-components';
+
 import db from '../db.json';
+
 import Widget from '../src/components/Widget';
 import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-
-// const BackgroundImage = styled.div`
-//   background-image: url(${db.bg});
-//   flex: 1;
-//   background-size: cover;
-//   background-position: center;
-// `;
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -22,13 +18,17 @@ export const QuizContainer = styled.div`
     margin: auto;
     padding: 15px;
   }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
-        <QuizLogo />
+        <FaBasketballBall color="#B54213" size={36} />
         <Widget>
           <Widget.Header>
             <h1>{db.title}</h1>
