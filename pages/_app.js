@@ -49,6 +49,9 @@ export default function App({ Component, pageProps }) {
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="800" />
         <meta property="og:image:height" content="600" />
+        <meta property="og:title" content="Home Page" />
+        <meta property="og:site_name" content="Basquete - AluraQuiz" />
+        <meta property="og:description" content="Quiz sobre basquete :)" />
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
