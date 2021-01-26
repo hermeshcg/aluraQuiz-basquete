@@ -1,4 +1,6 @@
+import React from 'react';
 import { FaBasketballBall } from 'react-icons/fa';
+
 import styled from 'styled-components';
 
 import db from '../db.json';
@@ -29,6 +31,7 @@ export default function Home() {
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <FaBasketballBall color="#B54213" size={36} />
+        <QuizLogo />
         <Widget>
           <Widget.Header>
             <h1>{db.title}</h1>
