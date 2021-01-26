@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaBasketballBall } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 
 import styled from 'styled-components';
 
@@ -26,11 +26,17 @@ export const QuizContainer = styled.div`
   flex-direction: column;
 `;
 
-export default function Home() {
+function Home() {
+  const [name, setName] = useState('');
+  const router = useRouter();
+  async function handleSubmit(e) {
+    e.preventDefault();
+    router.push(`/quiz?name=${name}`);
+  }
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
-        <FaBasketballBall color="#B54213" size={36} />
         <QuizLogo />
         <Widget>
           <Widget.Header>
@@ -43,7 +49,29 @@ export default function Home() {
 
         <Widget>
           <Widget.Content>
-            <a href="/">Ir para o quiz</a>
+            <form onSubmit={handleSubmit}>
+              <input
+                placeholder="Bota teu nome ai e bora jogar"
+                type="text"
+                onChange={(e) => setName(e.target.value)}
+              />
+              <button
+                type="submit"
+                onClick={handleSubmit}
+                disabled={name === ''}
+                style={{
+                  marginTop: '16px',
+                  border: 'none',
+                  padding: '8px 16px',
+                  borderRadius: '4px',
+                  width: '100%',
+                  background: '#121212',
+                  color: '#fff',
+                }}
+              >
+                Jogar
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
         <Footer />
@@ -52,3 +80,5 @@ export default function Home() {
     </QuizBackground>
   );
 }
+
+export default Home;

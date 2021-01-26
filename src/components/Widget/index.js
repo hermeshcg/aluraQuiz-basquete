@@ -4,10 +4,11 @@ const Widget = styled.div`
   width: 350px;
   margin-top: 24px;
   margin-bottom: 24px;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
   background-color: ${({ theme }) => theme.colors.mainBg};
   border-radius: 4px;
   overflow: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   h1,
   h2,
   h3 {
@@ -34,6 +35,19 @@ const Widget = styled.div`
     span {
       text-decoration: underline;
     }
+  }
+  input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+  }
+  input:focus {
+    outline: none;
+  }
+  button:hover {
+    cursor: pointer;
+    opacity: 0.9;
   }
 `;
 
