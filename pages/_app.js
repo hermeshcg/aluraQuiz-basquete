@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
           rel="stylesheet"
         />
-        <meta property="og:image" content="www.meusite.com.br/imagem.jpg" />
+        <meta property="og:image" content={db.bg} />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="800" />
         <meta property="og:image:height" content="600" />
