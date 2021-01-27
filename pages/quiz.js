@@ -14,9 +14,11 @@ function Loading() {
       <Widget.Header>
         <h1>Carregando ...</h1>
       </Widget.Header>
-      <Widget.Content>
-        <p>[Desafio basquete]</p>
-      </Widget.Content>
+      <img
+        src="https://media.giphy.com/media/1jYEnUrwpOvafvkovA/giphy.gif"
+        alt="Loading"
+        style={{ width: '100%', height: '350px', objectFit: 'cover' }}
+      />
     </Widget>
   );
 }
@@ -101,7 +103,7 @@ export default function QuizPage() {
   useEffect(() => {
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
-    }, 1 * 1000);
+    }, 3000);
   }, []);
 
   function handleSubmit(e) {
