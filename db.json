@@ -1,14 +1,139 @@
 {
   "bg": "https://images.unsplash.com/photo-1478317370563-0a8fc17e6837?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80",
   "title": "Basquete Quiz",
-  "description": "Teste seus conhecimentos do esporte da bola laranja",
+  "description": "Teste seus conhecimentos sobre o esporte da bola laranja. São 10 perguntas e cada uma vale 10 pontos",
+  "questions": [
+    {
+      "image": "https://media.giphy.com/media/Tw0rSdQs4fbJC/giphy.gif",
+      "title": "Quantos jogadores tem no total em uma partida de basquete ?",
+      "description": "Apenas os que estão em quadra, banco de reservas não conta ;)",
+      "answer": 2,
+      "alternatives": [
+        "22",
+        "10",
+        "14",
+        "8"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/l0HlyLYY090LpNOPS/giphy.gif",
+      "title": "Quanto tempo dura cada quarto de uma partida ?",
+      "description": "Padrões da nba",
+      "answer": 1,
+      "alternatives": [
+        "12",
+        "10",
+        "14",
+        "8"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/l2QZSithIGhPdpSdq/giphy.gif",
+      "title": "Quantos times jogam a NBA?",
+      "description": "Dica: são mais que 20",
+      "answer": 3,
+      "alternatives": [
+        "25",
+        "20",
+        "30",
+        "35"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/zAYZOtH5OMhuU/giphy.gif",
+      "title": "Com qual time o lendário Michael Jordan conquistou 6 títulos?",
+      "description": "Essa é fácil hehe",
+      "answer": 2,
+      "alternatives": [
+        "Atlanta Hawks",
+        "Chicago Bulls",
+        "Denver Nuggets",
+        "Golden State Warriors"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/UPJf4zhqTAuE8/giphy.gif",
+      "title": "Qual franquia possui mais títulos da NBA ?",
+      "description": "🥇",
+      "answer": 3,
+      "alternatives": [
+        "Boston Celtics",
+        "Los Angeles Lakers",
+        "Amboas franquias",
+        "Nenhum dos dois"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/3o7TKzM8K3X4MdePKM/giphy.gif",
+      "title": "Qual foi a única franquia que reverteu um placar de 3x1 em uma final da NBA?",
+      "description": "",
+      "answer": 2,
+      "alternatives": [
+        "Houston Rockets em 1995",
+        "Boston Celtics em 2008",
+        "Dallas Mavericks em 2011",
+        "Cleveland Cavaliers em 2016"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif",
+      "title": "Essa parte ainda esta em construção ",
+      "description": "",
+      "answer": 2,
+      "alternatives": [
+        "____",
+        "____",
+        "____",
+        "____"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif",
+      "title": "Essa parte ainda esta em construção ",
+      "description": "",
+      "answer": 2,
+      "alternatives": [
+        "____",
+        "____",
+        "____",
+        "____"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif",
+      "title": "Essa parte ainda esta em construção ",
+      "description": "",
+      "answer": 2,
+      "alternatives": [
+        "____",
+        "____",
+        "____",
+        "____"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif",
+      "title": "Essa parte ainda esta em construção ",
+      "description": "",
+      "answer": 2,
+      "alternatives": [
+        "____",
+        "____",
+        "____",
+        "____"
+      ]
+    }
+  ],
+  "external": [
+    ""
+  ], 
   "theme": {
     "colors": {
       "primary": "#B54213",
       "secondary": "#E47041",
-      "mainBg": "#EF7F4D",
-      "contrastText": "#161616",
-      "wrong": "#EF7F4D",
+      "mainBg": "#121212",
+      "contrastText": "#fff",
+      "wrong": "red",
       "success": "#4CAF50"
     },
     "borderRadius": "4px"

@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
 const Widget = styled.div`
-  width: 350px;
   margin-top: 24px;
   margin-bottom: 24px;
+  border: 1px solid ${({ theme }) => theme.colors.primary};
   background-color: ${({ theme }) => theme.colors.mainBg};
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   h1,
   h2,
   h3 {
@@ -16,7 +14,7 @@ const Widget = styled.div`
     font-weight: 700;
     line-height: 1;
     margin-bottom: 0;
-    color: #ffffff;
+    color: #fff;
   }
   p {
     font-size: 14px;
@@ -35,19 +33,6 @@ const Widget = styled.div`
     span {
       text-decoration: underline;
     }
-  }
-  input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
-    border: none;
-  }
-  input:focus {
-    outline: none;
-  }
-  button:hover {
-    cursor: pointer;
-    opacity: 0.9;
   }
 `;
 
@@ -74,6 +59,24 @@ Widget.Content = styled.div`
   ul {
     list-style: none;
     padding: 0;
+  }
+`;
+
+Widget.Topic = styled.a`
+  outline: 0;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.contrastText};
+  background-color: ${({ theme }) => `${theme.colors.primary}40`};
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  transition: 0.3s;
+  display: block;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
   }
 `;
 

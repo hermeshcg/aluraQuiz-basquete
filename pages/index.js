@@ -10,6 +10,8 @@ import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -47,30 +49,18 @@ function Home() {
           </Widget.Content>
         </Widget>
 
-        <Widget>
+        <Widget style={{ width: '100%' }}>
           <Widget.Content>
             <form onSubmit={handleSubmit}>
-              <input
-                placeholder="Bota teu nome ai e bora jogar"
-                type="text"
+              <Input
+                name="nomeDoUsuario"
                 onChange={(e) => setName(e.target.value)}
+                placeholder="Diz ai seu nome"
+                value={name}
               />
-              <button
-                type="submit"
-                onClick={handleSubmit}
-                disabled={name === ''}
-                style={{
-                  marginTop: '16px',
-                  border: 'none',
-                  padding: '8px 16px',
-                  borderRadius: '4px',
-                  width: '100%',
-                  background: '#121212',
-                  color: '#fff',
-                }}
-              >
+              <Button type="submit" disabled={name === ''}>
                 Jogar
-              </button>
+              </Button>
             </form>
           </Widget.Content>
         </Widget>
