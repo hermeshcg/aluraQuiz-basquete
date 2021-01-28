@@ -77,51 +77,51 @@
       ]
     },
     {
-      "image": "https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif",
-      "title": "Essa parte ainda esta em construção ",
+      "image": "https://media.giphy.com/media/0UVJ8hXh3f6Jf9HXLa/giphy.gif",
+      "title": "Qual foi o campeão da última edição do NBB?",
       "description": "",
-      "answer": 2,
+      "answer": 3,
       "alternatives": [
-        "____",
-        "____",
-        "____",
-        "____"
+        "Franca Basquete",
+        "Paulistano",
+        "Flamengo",
+        "Vasco"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif",
-      "title": "Essa parte ainda esta em construção ",
-      "description": "",
-      "answer": 2,
+      "image": "https://media.giphy.com/media/l2ZDUoPx3hcy6yOQg/giphy.gif",
+      "title": "Qual cidade é conhecida por ser a capital do basquete brasileiro?",
+      "description": "Dica: é conhecida também como capital do calçado",
+      "answer": 1,
       "alternatives": [
-        "____",
-        "____",
-        "____",
-        "____"
+        "Franca - SP",
+        "Campinas - SP",
+        "Bauru - SP",
+        "Belo Horizonte - MG"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif",
-      "title": "Essa parte ainda esta em construção ",
-      "description": "",
+      "image": "https://media.giphy.com/media/e5RONJDZLaIRR5itrT/giphy.gif",
+      "title": "Lebron James joga em qual time atualmente?",
+      "description": "Dica: Atual campeão da NBA",
       "answer": 2,
       "alternatives": [
-        "____",
-        "____",
-        "____",
-        "____"
+        "Toronto Raptors",
+        "Los Angeles Lakers",
+        "Cleveland Cavaliers",
+        "Miami Heat"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif",
-      "title": "Essa parte ainda esta em construção ",
-      "description": "",
-      "answer": 2,
+      "image": "https://media.giphy.com/media/xTiTnIdcfFTtxj2Kv6/giphy.gif",
+      "title": "Quantas vezes o Stephen Curry foi campeão da nba?",
+      "description": "Até o ano de 2020",
+      "answer": 3,
       "alternatives": [
-        "____",
-        "____",
-        "____",
-        "____"
+        "5",
+        "1",
+        "3",
+        "4"
       ]
     }
   ],
