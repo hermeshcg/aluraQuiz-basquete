@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Widget = styled.div`
   margin-top: 24px;
   margin-bottom: 24px;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   background-color: ${({ theme }) => theme.colors.mainBg};
   border-radius: 4px;
   overflow: hidden;
@@ -16,7 +16,8 @@ const Widget = styled.div`
     margin-bottom: 0;
     color: #fff;
   }
-  p {
+  p,
+  li {
     font-size: 14px;
     font-weight: 400;
     line-height: 1;
@@ -68,7 +69,7 @@ Widget.Topic = styled.a`
   color: ${({ theme }) => theme.colors.contrastText};
   background-color: ${({ theme }) => `${theme.colors.primary}40`};
   padding: 10px 15px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   cursor: pointer;
   border-radius: ${({ theme }) => theme.borderRadius};
   transition: 0.3s;
@@ -76,7 +77,7 @@ Widget.Topic = styled.a`
 
   &:hover,
   &:focus {
-    opacity: 0.5;
+    border: 1px solid ${({ theme }) => theme.colors.primary};
   }
 `;
 

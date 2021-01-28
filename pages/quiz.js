@@ -1,12 +1,16 @@
 /* eslint-disable react/no-array-index-key */
+/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+
 import QuizBackground from '../src/components/QuizBackground';
 import Widget from '../src/components/Widget';
 import db from '../db.json';
 import QuizLogo from '../src/components/QuizLogo';
 import QuizContainer from '../src/components/QuizContainer';
 import Button from '../src/components/Button';
+import GitHubCorner from '../src/components/GitHubCorner';
 
 function Loading() {
   return (
@@ -28,8 +32,12 @@ function QuestionWidget({
   totalQuestions,
   questionIndex,
   handleSubmit,
+  setSelectedAlternative,
+  hasQuestionBeenSelected,
+  setHasQuestionBeenSelected,
 }) {
   const questionID = `question_${questionIndex}`;
+
   return (
     <Widget>
       <Widget.Header>
@@ -50,26 +58,31 @@ function QuestionWidget({
               <Widget.Topic
                 as="label"
                 htmlFor={alternativeID}
-                key={alternativeIndex}
+                key={alternativeID}
               >
                 <input
                   id={alternativeID}
                   name={questionID}
                   type="radio"
-                  style={{ display: 'none' }}
+                  onChange={() => {
+                    setSelectedAlternative(alternativeIndex + 1);
+                    setHasQuestionBeenSelected(true);
+                  }}
                 />
                 {alternative}
               </Widget.Topic>
             );
           })}
-          <Button type="submit">Confirmar</Button>
+          <Button type="submit" disabled={!hasQuestionBeenSelected}>
+            Confirmar
+          </Button>
         </form>
       </Widget.Content>
     </Widget>
   );
 }
 
-function QuizResult() {
+function QuizResult({ points, results }) {
   return (
     <Widget>
       <Widget.Header>
@@ -81,7 +94,14 @@ function QuizResult() {
         style={{ width: '100%', height: '150px', objectFit: 'cover' }}
       />
       <Widget.Content>
-        <h3>Você fez () pontos</h3>
+        <h3>Você fez {points} pontos :D</h3>
+        <ul>
+          {results.map((result, index) => (
+            <li key={index}>
+              {index + 1}: {result === true ? 'Acertou' : 'Errou'}
+            </li>
+          ))}
+        </ul>
       </Widget.Content>
     </Widget>
   );
@@ -99,6 +119,11 @@ export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const questionIndex = currentQuestion;
   const question = db.questions[currentQuestion];
+  const [selectedAlternative, setSelectedAlternative] = useState();
+  const isCorrect = selectedAlternative === question.answer;
+  const [hasQuestionBeenSelected, setHasQuestionBeenSelected] = useState(false);
+  const [points, setPoints] = useState(0);
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -109,10 +134,21 @@ export default function QuizPage() {
   function handleSubmit(e) {
     e.preventDefault();
     const nextQuestion = questionIndex + 1;
+    if (isCorrect) {
+      toast.success('Você acertou :)');
+      setPoints(points + 10);
+      setResults([...results, true]);
+    } else {
+      setResults([...results, false]);
+      toast.error('Você errou :(  ');
+    }
     if (nextQuestion < totalQuestions) {
       setCurrentQuestion(questionIndex + 1);
+      setHasQuestionBeenSelected(false);
+      setSelectedAlternative(undefined);
     } else {
       setScreenState(screenStates.RESULT);
+      setHasQuestionBeenSelected(false);
     }
   }
 
@@ -127,13 +163,19 @@ export default function QuizPage() {
             totalQuestions={totalQuestions}
             questionIndex={questionIndex}
             handleSubmit={handleSubmit}
+            setSelectedAlternative={setSelectedAlternative}
+            hasQuestionBeenSelected={hasQuestionBeenSelected}
+            setHasQuestionBeenSelected={setHasQuestionBeenSelected}
           />
         )}
 
         {screenState === 'LOADING' && <Loading />}
 
-        {screenState === 'RESULT' && <QuizResult />}
+        {screenState === 'RESULT' && (
+          <QuizResult points={points} results={results} />
+        )}
       </QuizContainer>
+      <GitHubCorner projectUrl="https://github.com/hermeshcg" />
     </QuizBackground>
   );
 }

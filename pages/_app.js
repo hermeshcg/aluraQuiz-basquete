@@ -3,7 +3,8 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Head from 'next/head';
-
+import { ToastContainer, Flip } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import db from '../db.json';
 
 const GlobalStyle = createGlobalStyle`
@@ -38,6 +39,18 @@ const { theme } = db;
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <ToastContainer
+        position="top-left"
+        autoClose={2500}
+        transition={Flip}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Head>
         <title>AluraQuiz</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
