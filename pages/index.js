@@ -46,11 +46,6 @@ function Home() {
           </Widget.Header>
           <Widget.Content>
             <p>{db.description}</p>
-          </Widget.Content>
-        </Widget>
-
-        <Widget style={{ width: '100%' }}>
-          <Widget.Content>
             <form onSubmit={handleSubmit}>
               <Input
                 name="nomeDoUsuario"
@@ -62,6 +57,18 @@ function Home() {
                 Jogar
               </Button>
             </form>
+          </Widget.Content>
+        </Widget>
+
+        <Widget style={{ width: '100%' }}>
+          <Widget.Header>
+            <h1>Quizes da Galera</h1>
+          </Widget.Header>
+          <Widget.Content>
+            <p>
+              Jogue outros quizes de quem realizou a Imersão Alura ReactJS +
+              NextJS
+            </p>
           </Widget.Content>
         </Widget>
         <Footer />

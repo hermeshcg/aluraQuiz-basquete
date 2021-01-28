@@ -3,6 +3,7 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
 
 import QuizBackground from '../src/components/QuizBackground';
 import Widget from '../src/components/Widget';
@@ -83,10 +84,12 @@ function QuestionWidget({
 }
 
 function QuizResult({ points, results }) {
+  const router = useRouter();
+  const { name } = router.query;
   return (
     <Widget>
       <Widget.Header>
-        <h1>Parabéns, você concluiu o quiz sobre basquete :D</h1>
+        <h1>Parabéns {name}, você concluiu o quiz sobre basquete :D</h1>
       </Widget.Header>
       <img
         src="https://media.giphy.com/media/xT9DPDoWMicL4nU3NC/giphy.gif"
@@ -139,8 +142,8 @@ export default function QuizPage() {
       setPoints(points + 10);
       setResults([...results, true]);
     } else {
-      setResults([...results, false]);
       toast.error('Você errou :(  ');
+      setResults([...results, false]);
     }
     if (nextQuestion < totalQuestions) {
       setCurrentQuestion(questionIndex + 1);
