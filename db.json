@@ -126,8 +126,16 @@
     }
   ],
   "external": [
-    ""
-  ], 
+    "https://aluraquiz-css.omariosouto.vercel.app/",
+    "https://flow-quiz.garubieru.vercel.app",
+    "https://alura-quiz-base.abnner13.vercel.app",
+    "https://geek-quiz.andrevtavares.vercel.app",
+    "https://lolzinquiz-git-main.bernardooficial.vercel.app",
+    "https://quiz-pokemon.dashpunk.vercel.app",
+    "https://pokequiz-imersao-next.felipeferreiradev.vercel.app",
+    "https://doctor-who-quiz.emanuelpna.vercel.app",
+    "https://alura-quiz-avengers.fernanda-kipper.vercel.app"
+  ],
   "theme": {
     "colors": {
       "primary": "#B54213",

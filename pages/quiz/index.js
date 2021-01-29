@@ -5,13 +5,14 @@ import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 
-import QuizBackground from '../src/components/QuizBackground';
-import Widget from '../src/components/Widget';
-import db from '../db.json';
-import QuizLogo from '../src/components/QuizLogo';
-import QuizContainer from '../src/components/QuizContainer';
-import Button from '../src/components/Button';
-import GitHubCorner from '../src/components/GitHubCorner';
+import QuizBackground from '../../src/components/QuizBackground';
+import Widget from '../../src/components/Widget';
+import db from '../../db.json';
+import QuizLogo from '../../src/components/QuizLogo';
+import QuizContainer from '../../src/components/QuizContainer';
+import Button from '../../src/components/Button';
+import GitHubCorner from '../../src/components/GitHubCorner';
+import BackLinkArrow from '../../src/components/BackLinkArrow';
 
 function Loading() {
   return (
@@ -69,7 +70,6 @@ function QuestionWidget({
                     setSelectedAlternative(alternativeIndex + 1);
                     setHasQuestionBeenSelected(true);
                   }}
-                  checked={hasQuestionBeenSelected}
                 />
                 {alternative}
               </Widget.Topic>
@@ -90,6 +90,7 @@ function QuizResult({ points, results }) {
   return (
     <Widget>
       <Widget.Header>
+        <BackLinkArrow href="/" />
         <h1>Parabéns {name}, você concluiu o quiz sobre basquete :D</h1>
       </Widget.Header>
       <img
