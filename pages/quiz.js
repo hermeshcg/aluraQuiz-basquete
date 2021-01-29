@@ -69,6 +69,7 @@ function QuestionWidget({
                     setSelectedAlternative(alternativeIndex + 1);
                     setHasQuestionBeenSelected(true);
                   }}
+                  checked={isSelected}
                 />
                 {alternative}
               </Widget.Topic>
